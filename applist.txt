@@ -1,0 +1,21 @@
+--no-install-recommends software-properties-common
+--no-install-recommends dirmngr
+--no-install-recommends r-base
+build-essential
+libcurl4-openssl-dev
+libssl-dev
+libxml2-dev
+libblas-dev
+liblapack-dev
+gfortran
+cmake
+libv8-dev
+libfreetype6-dev
+libpng-dev
+libtiff5-dev
+libjpeg-dev
+libharfbuzz-dev
+libfribidi-dev
+libfontconfig1-dev
+fonts-firacode
+neofetch
