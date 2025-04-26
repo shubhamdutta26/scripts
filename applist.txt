@@ -19,3 +19,5 @@ libfribidi-dev
 libfontconfig1-dev
 fonts-firacode
 neofetch
+fonts-roboto
+fonts-roboto-slab
