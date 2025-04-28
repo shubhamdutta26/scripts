@@ -17,7 +17,8 @@ libjpeg-dev
 libharfbuzz-dev
 libfribidi-dev
 libfontconfig1-dev
-fonts-firacode
 neofetch
+vlc
 fonts-roboto
 fonts-roboto-slab
+fonts-firacode
