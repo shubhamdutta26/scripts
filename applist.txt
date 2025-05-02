@@ -21,6 +21,16 @@ neofetch
 vlc
 deja-dup
 ffmpeg
+meson
+pkg-config
+libsystemd-dev
+ninja-build
+git
+python3
+python3-venv
+python3-pip
+libdbus-1-dev
+libinih-dev
 fonts-roboto
 fonts-roboto-slab
 fonts-firacode
