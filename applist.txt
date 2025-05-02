@@ -19,6 +19,8 @@ libfribidi-dev
 libfontconfig1-dev
 neofetch
 vlc
+deja-dup
+ffmpeg
 fonts-roboto
 fonts-roboto-slab
 fonts-firacode
