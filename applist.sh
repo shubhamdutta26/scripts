@@ -39,6 +39,7 @@ sudo apt-get install -y \
     python3-pip \
     libdbus-1-dev \
     libinih-dev \
+    solaar\
     fonts-roboto \
     fonts-roboto-slab \
     fonts-firacode
