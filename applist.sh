@@ -40,6 +40,7 @@ sudo apt-get install -y \
     libdbus-1-dev \
     libinih-dev \
     solaar\
+    libudunits2-dev
     fonts-roboto \
     fonts-roboto-slab \
     fonts-firacode
