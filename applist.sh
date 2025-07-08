@@ -35,6 +35,7 @@ sudo apt-get install -y \
     ninja-build \
     git \
     python3 \
+    pandoc \
     python3-venv \
     python3-pip \
     libdbus-1-dev \
