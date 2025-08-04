@@ -57,6 +57,7 @@ echo "deb [signed-by=/usr/share/keyrings/cran.gpg] https://cloud.r-project.org/b
 # Install Flatpak apps
 flatpak install -y flathub org.kde.kdenlive
 flatpak install -y flathub org.standardnotes.standardnotes
+flatpak install flathub com.discordapp.Discord
 
 # Update apt repositories again in case the new sources are added
 sudo apt update -y
