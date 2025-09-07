@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ### Update and Upgrade System
-sudo apt update -y
+sudo apt update
 sudo apt upgrade -y
 
 ### Install APT Packages
@@ -23,7 +23,6 @@ sudo apt install -y \
 ### Setup Flatpak and Install Flatpak Packages
 sudo apt install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 flatpak install -y flathub org.kde.kdenlive
 flatpak install -y flathub com.notesnook.Notesnook
 flatpak install -y flathub com.discordapp.Discord
@@ -46,14 +45,19 @@ sudo make install
 cd ..
 rm -rf R-4.5.1 R-4.5.1.tar.gz
 
-### Install RStudio
+### Install RStudio (Check .tar.gz contents first)
 wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.05.1-513-amd64-debian.tar.gz
 tar -xvzf rstudio-2025.05.1-513-amd64-debian.tar.gz
-cd rstudio-2025.05.1-513-amd64
-sudo dpkg -i rstudio-2025.05.1-513-amd64.deb
-sudo apt --fix-broken install
-rm ~/rstudio-2025.05.1-513-amd64-debian.tar.gz
-rm -r ~/rstudio-2025.05.1-513-amd64
+cd rstudio-2025.05.1-513-amd64 || { echo "RStudio directory not found"; exit 1; }
+if ls *.deb 1> /dev/null 2>&1; then
+  sudo dpkg -i ./*.deb
+  sudo apt --fix-broken install -y
+else
+  echo "No .deb package found in RStudio tarball; install manually as per RStudio Linux instructions."
+fi
+cd ..
+rm -f rstudio-2025.05.1-513-amd64-debian.tar.gz
+rm -rf rstudio-2025.05.1-513-amd64
 
 ### Install Anaconda (Silent Mode) and Clean Up Installer
 curl -O https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
@@ -61,7 +65,6 @@ bash Anaconda3-2025.06-0-Linux-x86_64.sh -b
 rm -f Anaconda3-2025.06-0-Linux-x86_64.sh
 ~/anaconda3/bin/conda init
 source ~/.bashrc
-
 # Recommended Anaconda/conda configuration
 conda config --set auto_activate_base false
 conda update -y -n base conda
@@ -71,8 +74,8 @@ echo 'export enable_high_dpi_scaling=True' >> ~/.bashrc
 source ~/.bashrc
 
 ### System Cleanup (Recommended)
-sudo apt update -y
+sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-echo "Setup complete: APT packages, Flatpaks, ProtonVPN, R, Anaconda installed and updated."
+echo "Setup complete: APT packages, Flatpaks, ProtonVPN, R, RStudio, and Anaconda installed and updated."
