@@ -17,6 +17,7 @@ sudo apt install -y \
   libharfbuzz-dev libfribidi-dev libfreetype6-dev \
   libtiff5-dev libxml2-dev libnode-dev make cmake libgsl-dev \
   libpng-dev libtiff5-dev libjpeg-dev libwebp-dev \
+  libxss1 libgstreamer1.0-0 \
   libsecret-1-dev libmagick++-dev fonts-firacode
 
 ### Setup Flatpak and Install Flatpak Packages
@@ -44,6 +45,15 @@ make -j"$(nproc)"
 sudo make install
 cd ..
 rm -rf R-4.5.1 R-4.5.1.tar.gz
+
+### Install RStudio
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.05.1-513-amd64-debian.tar.gz
+tar -xvzf rstudio-2025.05.1-513-amd64-debian.tar.gz
+cd rstudio-2025.05.1-513-amd64
+sudo dpkg -i rstudio-2025.05.1-513-amd64.deb
+sudo apt --fix-broken install
+rm ~/rstudio-2025.05.1-513-amd64-debian.tar.gz
+rm -r ~/rstudio-2025.05.1-513-amd64
 
 ### Install Anaconda (Silent Mode) and Clean Up Installer
 curl -O https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
