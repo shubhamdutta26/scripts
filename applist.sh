@@ -4,7 +4,7 @@ set -euo pipefail
 
 ### Update and Upgrade System
 
-sudo apt update -y
+sudo apt update
 sudo apt upgrade -y
 
 ### Install APT Packages
