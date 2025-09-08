@@ -4,7 +4,7 @@ set -euo pipefail
 
 ### Update and Upgrade System
 
-sudo apt update
+sudo apt update -y
 sudo apt upgrade -y
 
 ### Install APT Packages
@@ -85,7 +85,7 @@ conda update -y anaconda-navigator
 echo 'export QT_XCB_GL_INTEGRATION=none' >> ~/.bashrc
 echo 'export enable_high_dpi_scaling=True' >> ~/.bashrc
 
-# Only one reload at the end
+# Reload at the end
 source ~/.bashrc
 
 ### System Cleanup (Recommended)
