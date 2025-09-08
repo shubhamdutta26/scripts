@@ -7,8 +7,7 @@ sudo apt upgrade -y
 
 ### Install APT Packages
 sudo apt install -y \
-  ttf-mscorefonts-installer \
-  kdeconnect \
+  ttf-mscorefonts-installer kdeconnect \
   steam-installer steam-devices steam-libs \
   build-essential gfortran libreadline-dev libx11-dev \
   libxt-dev libpng-dev libjpeg-dev libcairo2-dev libssl-dev \
@@ -17,7 +16,7 @@ sudo apt install -y \
   libharfbuzz-dev libfribidi-dev libfreetype6-dev \
   libtiff5-dev libxml2-dev libnode-dev make cmake libgsl-dev \
   libpng-dev libtiff5-dev libjpeg-dev libwebp-dev \
-  libxss1 libgstreamer1.0-0 \
+  libxss1 libgstreamer1.0-0 npm \
   libsecret-1-dev libmagick++-dev fonts-firacode
 
 ### Setup Flatpak and Install Flatpak Packages
@@ -58,6 +57,11 @@ fi
 cd ..
 rm -f rstudio-2025.05.1-513-amd64-debian.tar.gz
 rm -rf rstudio-2025.05.1-513-amd64
+
+### Install decktape
+sudo npm install -g decktape
+echo 'export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome' >> ~/.bashrc
+source ~/.bashrc
 
 ### Install Anaconda (Silent Mode) and Clean Up Installer
 curl -O https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
