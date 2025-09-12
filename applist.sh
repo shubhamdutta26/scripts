@@ -37,7 +37,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 flatpak install -y flathub org.kde.kdenlive
 flatpak install -y flathub com.notesnook.Notesnook
 flatpak install -y flathub com.discordapp.Discord
-flatpak install -y flathub com.google.Chrome
 flatpak install -y flathub org.audacityteam.Audacity
 
 ### Install ProtonVPN (for Mint/Debian/Ubuntu, GNOME Desktop)
@@ -58,21 +57,6 @@ sudo make install
 cd ..
 rm -rf R-4.5.1 R-4.5.1.tar.gz
 
-### Install RStudio (Check .tar.gz contents first)
-
-wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.05.1-513-amd64-debian.tar.gz
-tar -xvzf rstudio-2025.05.1-513-amd64-debian.tar.gz
-cd rstudio-2025.05.1-513-amd64 || { echo "RStudio directory not found"; exit 1; }
-if ls *.deb 1> /dev/null 2>&1; then
-    sudo dpkg -i ./*.deb
-    sudo apt --fix-broken install -y
-else
-    echo "No .deb package found in RStudio tarball; install manually as per RStudio Linux instructions."
-fi
-cd ..
-rm -f rstudio-2025.05.1-513-amd64-debian.tar.gz
-rm -rf rstudio-2025.05.1-513-amd64
-
 ### Install decktape
 
 sudo npm install -g decktape
@@ -81,9 +65,8 @@ echo 'export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome' >> ~/.bashrc
 ### Install Anaconda (Silent Mode) and Clean Up Installer
 
 curl -O https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
-bash Anaconda3-2025.06-0-Linux-x86_64.sh -b
-rm -f Anaconda3-2025.06-0-Linux-x86_64.sh
-~/anaconda3/bin/conda init
+chmod +x ./Anaconda3-2025.06-0-Linux-x86_64.sh
+./Anaconda3-2025.06-0-Linux-x86_64.sh
 
 # Recommended Anaconda/conda configuration
 conda config --set auto_activate_base false
