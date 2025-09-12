@@ -11,7 +11,6 @@ sudo apt upgrade -y
 
 sudo apt install -y \
 ttf-mscorefonts-installer kdeconnect \
-steam-installer steam-devices steam-libs \
 build-essential gfortran libreadline-dev libx11-dev \
 libxt-dev libpng-dev libjpeg-dev libcairo2-dev libssl-dev \
 libcurl4-openssl-dev texinfo texlive texlive-fonts-extra \
@@ -21,6 +20,14 @@ libtiff5-dev libxml2-dev libnode-dev make cmake libgsl-dev \
 libpng-dev libtiff5-dev libjpeg-dev libwebp-dev \
 libxss1 libgstreamer1.0-0 npm \
 libsecret-1-dev libmagick++-dev fonts-firacode
+
+### Install steam and associated packages
+
+sudo dpkg --add-architecture i386
+sudo add-apt-repository universe
+sudo add-apt-repository multiverse
+sudo apt install steam-installer
+sudo apt update
 
 ### Setup Flatpak and Install Flatpak Packages
 
