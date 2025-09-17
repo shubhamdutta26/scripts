@@ -45,6 +45,8 @@ wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-st
 sudo dpkg -i ./protonvpn-stable-release_1.0.8_all.deb && sudo apt update
 sudo apt install -y proton-vpn-gnome-desktop
 rm -f protonvpn-stable-release_1.0.8_all.deb
+sudo apt install libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
+
 
 ### Install R from Source
 
