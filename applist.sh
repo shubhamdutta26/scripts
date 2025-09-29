@@ -70,6 +70,10 @@ sudo dpkg -i quarto*.deb
 rm -rf quarto*.deb
 quarto install tinytex
 
+curl -O https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
+bash ~/Anaconda3*.sh -b -p $HOME/anaconda3
+rm -f Anaconda3*.sh
+
 sudo update-locale LC_TIME=en_US.UTF-8
 
 sudo apt autoremove -y
