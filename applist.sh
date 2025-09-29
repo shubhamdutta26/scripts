@@ -14,9 +14,9 @@ sudo apt install -y \
   libxt-dev libpng-dev libjpeg-dev libcairo2-dev libssl-dev \
   libcurl4-openssl-dev texinfo texlive texlive-fonts-extra \
   screen libbz2-dev libzstd-dev liblzma-dev libicu-dev \
-  libharfbuzz-dev libfribidi-dev libfreetype6-dev \
+  libharfbuzz-dev libfribidi-dev libfreetype6-dev libindicator7 \
   libtiff5-dev libxml2-dev libnode-dev make cmake libgsl-dev \
-  libwebp-dev libxss1 libgstreamer1.0-0 npm curl wget \
+  libwebp-dev libxss1 libgstreamer1.0-0 npm curl wget flatpak \
   libsecret-1-dev libmagick++-dev fonts-firacode steam
 
 wget https://cran.r-project.org/src/base/R-4/R-4.5.1.tar.gz
@@ -31,20 +31,15 @@ rm -rf R-4.5.1 R-4.5.1.tar.gz
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 nvm install 20
 nvm use 20
-
 npm install -g decktape
 
-sudo apt-get install -y libappindicator1 libindicator7
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome*.deb
 rm -rf google-chrome*.deb
 
-sudo apt install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 flatpak install -y flathub org.kde.kdenlive
 flatpak install -y flathub com.notesnook.Notesnook
 flatpak install -y flathub com.discordapp.Discord
@@ -79,5 +74,3 @@ sudo update-locale LC_TIME=en_US.UTF-8
 sudo apt autoremove -y
 
 echo "Installation complete."
-
-sudo reboot
