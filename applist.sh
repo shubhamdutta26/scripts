@@ -2,6 +2,8 @@
 set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
+start_time=$(date +%s)
+
 sudo add-apt-repository universe -y
 sudo add-apt-repository multiverse -y
 sudo dpkg --add-architecture i386
@@ -67,4 +69,11 @@ quarto install tinytex
 
 sudo apt autoremove -y
 
+end_time=$(date +%s)
+elapsed=$((end_time - start_time))
+
 echo "Installation complete."
+echo "Total installation time: ${elapsed} seconds."
+
+# Optional: also print time in HH:MM:SS format
+printf "Elapsed time: %02d:%02d:%02d\n" $((elapsed/3600)) $(( (elapsed/60) % 60 )) $((elapsed % 60))
