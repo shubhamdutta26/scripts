@@ -49,7 +49,7 @@ flatpak install -y flathub org.audacityteam.Audacity
 
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
 sudo dpkg -i ./protonvpn-*.deb && sudo apt update
-sudo apt install proton-vpn-gnome-desktop
+sudo apt install -y proton-vpn-gnome-desktop
 rm -f protonvpn-*.deb
 sudo apt install -y libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
 
@@ -73,7 +73,4 @@ end_time=$(date +%s)
 elapsed=$((end_time - start_time))
 
 echo "Installation complete."
-echo "Total installation time: ${elapsed} seconds."
-
-# Optional: also print time in HH:MM:SS format
 printf "Elapsed time: %02d:%02d:%02d\n" $((elapsed/3600)) $(( (elapsed/60) % 60 )) $((elapsed % 60))
