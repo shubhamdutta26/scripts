@@ -9,13 +9,8 @@ options(
 
 install.packages('pak')
 pak::pkg_install(c(
-  'ragg',
-  'tidyverse',
-  'gt',
-  'ggtext',
-  'ggsci',
-  'here',
-  'devtools'
+  'ragg', 'tidyverse', 'gt', 'ggtext', 'ggsci', 'here','devtools',
+  'drc'
 ))
 
 end_time <- proc.time()
