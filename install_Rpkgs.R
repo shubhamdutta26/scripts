@@ -10,8 +10,10 @@ options(
 install.packages('pak')
 pak::pkg_install(c(
   'ragg', 'tidyverse', 'gt', 'ggtext', 'ggsci', 'here','devtools',
-  'drc', 'sdtools'
+  'drc'
 ))
+
+pak::pak(c('shubhamdutta26/sdtools'))
 
 end_time <- proc.time()
 elapsed <- end_time - start_time
