@@ -21,14 +21,14 @@ sudo apt install -y \
   libwebp-dev libxss1 libgstreamer1.0-0 npm curl wget flatpak \
   libsecret-1-dev libmagick++-dev fonts-firacode steam
 
-wget https://cran.r-project.org/src/base/R-4/R-4.5.1.tar.gz
-tar -xvf R-4.5.1.tar.gz
-cd R-4.5.1
+wget https://cran.r-project.org/src/base/R-4/R-4.5.2.tar.gz
+tar -xvf R-4.5.2.tar.gz
+cd R-4.5.2
 ./configure --enable-R-shlib
 make -j"$(nproc)"
 sudo make install
 cd ..
-rm -rf R-4.5.1 R-4.5.1.tar.gz
+rm -rf R-4.5.2 R-4.5.2.tar.gz
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
@@ -41,11 +41,12 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome*.deb
 rm -rf google-chrome*.deb
 
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub org.kde.kdenlive
-flatpak install -y flathub com.notesnook.Notesnook
-flatpak install -y flathub com.discordapp.Discord
-flatpak install -y flathub org.audacityteam.Audacity
+# needs testing
+sudo flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install --system -y flathub org.kde.kdenlive
+sudo flatpak install --system -y flathub com.notesnook.Notesnook
+sudo flatpak install --system -y flathub com.discordapp.Discord
+sudo flatpak install --system -y flathub org.audacityteam.Audacity
 
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
 sudo dpkg -i ./protonvpn-*.deb && sudo apt update
