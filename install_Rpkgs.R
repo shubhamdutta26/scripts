@@ -10,7 +10,7 @@ options(
 install.packages('pak')
 pak::pkg_install(c(
   'ragg', 'tidyverse', 'gt', 'ggtext', 'ggsci', 'here','devtools',
-  'drc', 'kable'
+  'drc'
 ))
 
 pak::pak(c('shubhamdutta26/sdtools'))
