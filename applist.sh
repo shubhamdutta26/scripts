@@ -54,7 +54,7 @@ rm -f protonvpn-*.deb
 sudo apt install -y libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
 
 sudo apt install -y libssl-dev libclang-dev
-wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.09.0-387-amd64.deb
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.09.2-418-amd64.deb
 sudo dpkg -i rstudio*.deb
 rm -rf rstudio*.deb
 
