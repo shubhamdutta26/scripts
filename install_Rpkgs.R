@@ -10,8 +10,10 @@ options(
 install.packages('pak')
 pak::pkg_install(c(
   'ragg', 'tidyverse', 'gt', 'ggtext', 'ggsci', 'here','devtools',
-  'drc'
+  'drc', 'BiocManager', 'ggmsa'
 ))
+
+BiocManager::install('msa')
 
 pak::pak(c('shubhamdutta26/sdtools'))
 
