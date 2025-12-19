@@ -10,7 +10,7 @@ options(
 install.packages('pak')
 pak::pkg_install(c(
   'ragg', 'tidyverse', 'gt', 'ggtext', 'ggsci', 'here','devtools',
-  'drc', 'BiocManager', 'ggmsa'
+  'drc', 'BiocManager', 'ggmsa', 'janitor'
 ))
 
 BiocManager::install('msa')
