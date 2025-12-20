@@ -45,6 +45,10 @@ sudo dpkg -i quarto*.deb
 rm -rf quarto*.deb
 quarto install tinytex
 
+wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Ubuntu-24.04-amd64.deb
+sudo dpkg -i veracrypt*.deb
+rm -rf veracrypt*.deb
+
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
 sudo dpkg -i ./protonvpn-*.deb && sudo apt update
 sudo apt install -y proton-vpn-gnome-desktop
