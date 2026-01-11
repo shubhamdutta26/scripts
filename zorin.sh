@@ -19,7 +19,13 @@ sudo apt install -y \
   libharfbuzz-dev libfribidi-dev libfreetype6-dev libindicator7 \
   libtiff5-dev libxml2-dev libnode-dev make cmake libgsl-dev \
   libwebp-dev libxss1 libgstreamer1.0-0 npm curl wget flatpak \
-  libsecret-1-dev libmagick++-dev fonts-firacode steam
+  libsecret-1-dev libmagick++-dev fonts-firacode stow ffmpeg 7zip \
+  jq poppler-utils fd-find ripgrep fzf zoxide imagemagick steam
+
+# curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+# cargo install --force yazi-build
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+git clone https://github.com/shubhamdutta26/nvim-config.git ~/.config/nvim
 
 cd ~/Downloads
 wget https://cran.r-project.org/src/base/R-4/R-4.5.2.tar.gz
