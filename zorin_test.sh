@@ -109,7 +109,26 @@ sudo flatpak install -y flathub \
     com.discordapp.Discord \
     org.audacityteam.Audacity
 
-# 8. Cleanup
+# 8. Install Nerd Font (FiraCode)
+echo "🔡 Installing FiraCode Nerd Font..."
+FONT_DIR="$HOME/.local/share/fonts/FiraCode"
+mkdir -p "$FONT_DIR"
+
+# Ensure unzip is available
+sudo apt install -y unzip
+
+# Download and Extract
+wget -q -O /tmp/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip
+unzip -o /tmp/FiraCode.zip -d "$FONT_DIR"
+rm /tmp/FiraCode.zip
+
+# Clean up non-font files from the zip (optional but keeps things tidy)
+find "$FONT_DIR" -type f ! -name "*.ttf" ! -name "*.otf" -delete
+
+# Update font cache
+fc-cache -fv
+
+# 9. Cleanup
 sudo apt autoremove -y
 
 end_time=$(date +%s)
