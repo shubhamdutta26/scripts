@@ -27,13 +27,13 @@ sudo apt install -y \
   git libclang-dev
 
 # 3. Programming Languages & Environments
-echo "🦀 Installing Rust..."
+echo "🦀 Installing Rust and Yazi"
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 # Ensure cargo is in the path for the rest of this script
 source "$HOME/.cargo/env"
 rustup toolchain install nightly
 # Note: yazi-build requires specific rust version/deps
-cargo install --force yazi-cli yazi-gen || echo "Yazi install failed, check dependencies"
+cargo install --force yazi-build
 
 echo "✨ Installing Starship and Neovim Config..."
 curl -sS https://starship.rs/install.sh | sh -s -- -y
