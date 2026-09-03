@@ -9,26 +9,26 @@ options(
 
 # For arch linux ----
 Sys.setenv(DOWNLOAD_STATIC_LIBV8 = "1")
-install.packages("V8")
 # -----
 
 install.packages('pak')
-pak::pkg_install(c(
-  'ragg',
-  'tidyverse',
-  'gt',
-  'ggtext',
-  'ggsci',
-  'here',
-  'devtools',
-  'drc',
-  'ggmsa',
-  'janitor',
-  'quarto',
-  'prismatic',
-  'ggiraph',
-  'BiocManager'
-))
+pak::pkg_install(
+  c(
+    'V8', # arch
+    'ragg',
+    'tidyverse',
+    'gt',
+    'ggtext',
+    'ggsci',
+    'here',
+    'devtools',
+    'drc',
+    'janitor',
+    'quarto',
+    'prismatic',
+    'BiocManager'
+  )
+)
 
 BiocManager::install('msa')
 
