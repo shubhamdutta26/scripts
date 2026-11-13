@@ -12,9 +12,9 @@ Sys.setenv(DOWNLOAD_STATIC_LIBV8 = "1")
 # -----
 
 install.packages('pak')
+install.packages('V8')
 pak::pkg_install(
   c(
-    'V8', # arch
     'ragg',
     'tidyverse',
     'gt',
